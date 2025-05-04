@@ -14,7 +14,7 @@ set _actoff=0
 set _actprojvis=0
 
 ::  To activate all Windows/ESU/Office, run the script with "/Z-WindowsESUOffice" parameter or change 0 to 1 in below line
-set _actwinesuoff=0
+set _actwinesuoff=1
 
 ::  Advanced options:
 ::  To activate Windows K-M-S host (csvlk), run the script with "/Z-WinHost" parameter or change 0 to 1 in below line
