@@ -396,11 +396,11 @@ echo:
 ::echo               [B] Activate - Office %KS% Host
 ::echo               [C] Activate - Windows 8/8.1 APPX Sideloading
 ::echo               [D] Activate - Manually Select Products
-if defined _vis (
-echo               [E] Reset    - Rearm/Timers
-) else (
-echo               [E] Reset    - Rearm/Timers/Tamper/Lock
-)
+::if defined _vis (
+::echo               [E] Reset    - Rearm/Timers
+::) else (
+::echo               [E] Reset    - Rearm/Timers/Tamper/Lock
+::)
 ::echo               _______________________________________________       
 ::echo:
 ::echo               [6] Remove TSforge Activation
