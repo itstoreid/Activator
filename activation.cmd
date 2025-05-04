@@ -390,24 +390,24 @@ echo               [4] Activate - Office [Project/Visio]
 echo               [5] Activate - All
 echo               _______________________________________________  
 echo: 
-echo                   Advanced Options:
-echo:
-echo               [A] Activate - Windows %KS% Host
-echo               [B] Activate - Office %KS% Host
-echo               [C] Activate - Windows 8/8.1 APPX Sideloading
-echo               [D] Activate - Manually Select Products
+::echo                   Advanced Options:
+::echo:
+::echo               [A] Activate - Windows %KS% Host
+::echo               [B] Activate - Office %KS% Host
+::echo               [C] Activate - Windows 8/8.1 APPX Sideloading
+::echo               [D] Activate - Manually Select Products
 if defined _vis (
-echo               [E] Reset    - Rearm/Timers
+::echo               [E] Reset    - Rearm/Timers
 ) else (
-echo               [E] Reset    - Rearm/Timers/Tamper/Lock
+::echo               [E] Reset    - Rearm/Timers/Tamper/Lock
 )
-echo               _______________________________________________       
-echo:
-echo               [6] Remove TSforge Activation
-echo               [7] Download Office
-echo               [0] %_exitmsg%
-echo        ______________________________________________________________
-echo:
+::echo               _______________________________________________       
+::echo:
+::echo               [6] Remove TSforge Activation
+::echo               [7] Download Office
+::echo               [0] %_exitmsg%
+::echo        ______________________________________________________________
+::echo:
 call :dk_color2 %_White% "            " %_Green% "Choose a menu option using your keyboard..."
 choice /C:12345ABCDE670 /N
 set _el=!errorlevel!
