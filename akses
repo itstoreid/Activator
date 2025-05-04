@@ -35,7 +35,6 @@ $rand = [Guid]::NewGuid().Guid
 $isAdmin = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match 'S-1-5-32-544')
 $FilePath = if ($isAdmin) { "$env:SystemRoot\Temp\MAS_$rand.cmd" } else { "$env:USERPROFILE\AppData\Local\Temp\MAS_$rand.cmd" }
 Set-Content -Path $FilePath -Value "@::: $rand `r`n$response"
-CheckFile $FilePath
 
 $env:ComSpec = "$env:SystemRoot\system32\cmd.exe"
 $chkcmd = & $env:ComSpec /c "echo CMD is working"
@@ -43,7 +42,6 @@ if ($chkcmd -notcontains "CMD is working") {
     Write-Warning "cmd.exe is not working.`nReport this issue at $troubleshoot"
 }
 saps -FilePath $env:ComSpec -ArgumentList "/c """"$FilePath"" $args""" -Wait
-CheckFile $FilePath
 
 $FilePaths = @("$env:SystemRoot\Temp\MAS*.cmd", "$env:USERPROFILE\AppData\Local\Temp\MAS*.cmd")
 foreach ($FilePath in $FilePaths) { Get-Item $FilePath | Remove-Item }
