@@ -1,3 +1,4 @@
+@set masver=5.1
 @echo off
 
 ::  To activate Windows, run the script with "/Z-Windows" parameter or change 0 to 1 in below line
